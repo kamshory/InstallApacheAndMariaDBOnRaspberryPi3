@@ -15,19 +15,33 @@
 ## Command
 
 /usr/local/bin/rootfs-expand
-firewall-cmd --permanent --add-port=800/tcp
-firewall-cmd --permanent --add-port=80/tcp
-yum update -y
-yum install -y httpd
-yum install -y mariadb-server mariadb
-yum install -y php php-gd php-gd php-exif php-libxml php-mbstring php-mysql
-yum install -y sysstat
-yum install -y unzip 
-systemctl start httpd.service
-systemctl enable httpd.service
-systemctl start mariadb.service
-systemctl enable mariadb.service
-cd /var/www
-chown -R apache html
-chmod -R 755 html
 
+firewall-cmd --permanent --add-port=800/tcp
+
+firewall-cmd --permanent --add-port=80/tcp
+
+yum update -y
+
+yum install -y httpd
+
+yum install -y mariadb-server mariadb
+
+yum install -y php php-gd php-gd php-exif php-libxml php-mbstring php-mysql
+
+yum install -y sysstat
+
+yum install -y unzip 
+
+systemctl start httpd.service
+
+systemctl enable httpd.service
+
+systemctl start mariadb.service
+
+systemctl enable mariadb.service
+
+cd /var/www
+
+chown -R apache html
+
+chmod -R 755 html

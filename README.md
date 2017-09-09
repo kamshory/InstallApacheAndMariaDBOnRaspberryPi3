@@ -45,3 +45,18 @@ cd /var/www
 chown -R apache html
 
 chmod -R 755 html
+
+## Setup Database
+
+After install Apache and Maria DB, you must set root password for Maria DB.
+
+mysql -u root
+
+Execute query to set root password
+
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('yournewpassword');
+
+SET PASSWORD FOR 'root'@'%' = PASSWORD('yournewpassword');
+
+
+
